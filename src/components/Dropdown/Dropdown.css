@@ -1,0 +1,35 @@
+.dropdown-toggle {
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 1px var(--color-6);
+  padding: 0.5rem 1.5rem;
+}
+
+.dropdown-toggle:hover {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  list-style: none;
+  margin: 0;
+  padding: 1rem 1.5rem;
+}
+
+.dropdown-menu li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+}
+
+.dropdown-checkbox {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.dropdown-option {
+  text-transform: capitalize;
+}

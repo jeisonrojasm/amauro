@@ -54,7 +54,6 @@
 @media (min-width: 1280px) {
   .base__filters {
     width: 50%;
-
     gap: 2rem;
   }
 }
@@ -96,6 +95,10 @@
   display: none;
 }
 
+.filters__filter-container:hover {
+  cursor: pointer;
+}
+
 @media (min-width: 1280px) {
   .filters__filter-text {
     display: block;
@@ -107,12 +110,8 @@
   .filters__filter-container {
     width: 50%;
     justify-content: flex-start;
+    position: relative;
   }
-
-  .filters__filter-container:hover {
-    cursor: pointer;
-  }
-
 }
 
 .base__demands {

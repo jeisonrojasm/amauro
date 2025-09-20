@@ -65,23 +65,22 @@
 
 .cards-modal {
   background-color: var(--color-1);
-  margin-top: 8rem;
-  height: 100%;
+  /* margin-top: 8rem; */
+  height: 88%;
   border-radius: 1rem;
   padding: 4rem 2rem 3rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-sizing: border-box
 }
 
 @media (min-width: 1280px) {
   .cards-modal {
     margin-top: 0;
     margin-left: 50vw;
-  }
-
-  .cards-modal__right {
-    margin-bottom: 8rem;
+    padding-bottom: 5rem;
+    height: 100%;
   }
 
 }

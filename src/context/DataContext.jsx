@@ -1,17 +1,23 @@
 import { createContext, useEffect, useState } from 'react'
-import { getAllDemandsQuery } from '../utils/queries'
+import { getAllDemandsQuery, getClientsQuery, getDemandTypesQuery, getStatusesQuery } from '../utils/queries'
 
 export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
   const [data, setData] = useState({
     demands: [],
+    demandTypes: [],
+    statuses: [],
+    clients: [],
   })
 
   useEffect(() => {
     const fetchData = async () => {
       const demands = await getAllDemandsQuery()
-      setData({ ...data, demands })
+      const demandTypes = await getDemandTypesQuery()
+      const statuses = await getStatusesQuery()
+      const clients = await getClientsQuery()
+      setData({ ...data, demands, demandTypes, statuses, clients })
     }
     fetchData()
   }, [])
