@@ -1,10 +1,16 @@
-import React from 'react'
+import icono_filter from '../../assets/images/icono-filter-list.png'
+import icono_search from '../../assets/images/icono-search.png'
 import { Nav } from '../Nav/Nav'
 import './Base.css'
-import icono_search from '../../assets/images/icono-search.png';
-import icono_filter from '../../assets/images/icono-filter-list.png';
+import { Cards } from '../Cards/Cards'
+import { useContext } from 'react'
+import { DataContext } from '../../context/DataContext'
 
 export const Base = () => {
+  const { data } = useContext(DataContext)
+  const { demands } = data
+  console.log(demands);
+
   return (
     <div className='base'>
       <Nav />
@@ -19,6 +25,20 @@ export const Base = () => {
             <img src={icono_filter} alt="Icono de filtro" />
             <p className='filters__filter-text'>Filtrar por</p>
           </div>
+        </div>
+        <div className='base__demands'>
+          {demands.map((demand) => (
+            <Cards
+              key={demand.id}
+              client={demand.client}
+              demandType={demand.demandType}
+              description={demand.description}
+              documents={demand.documents}
+              id={demand.id}
+              name={demand.name}
+              status={demand.status}
+            />
+          ))}
         </div>
       </div>
     </div>
