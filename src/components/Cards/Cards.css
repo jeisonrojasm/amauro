@@ -5,12 +5,28 @@
   padding: 2rem;
   margin-top: 2rem;
 }
-.cards__header {
+
+.cards__header,
+.cards__header--modal {
   font-weight: bold;
   color: var(--color-2);
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.cards__header img:hover {
+  cursor: pointer;
+}
+
+.cards__header--modal h2 {
+  font-size: 2.2rem;
+}
+
+.cards__header--modal button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .cards__header h2 {
@@ -45,4 +61,95 @@
 .cards__client-name,
 .cards__description {
   font-weight: normal;
+}
+
+.cards-modal {
+  background-color: var(--color-1);
+  margin-top: 8rem;
+  height: 100%;
+  border-radius: 1rem;
+  padding: 4rem 2rem 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (min-width: 1280px) {
+  .cards-modal {
+    margin-top: 0;
+    margin-left: 50vw;
+  }
+
+  .cards-modal__right {
+    margin-bottom: 8rem;
+  }
+
+}
+
+@media (min-width:1440px) {
+  .cards-modal {
+    margin-left: 60vw;
+  }
+}
+
+.cards__documents-button {
+  background-color: var(--color-12);
+  border: none;
+  width: 100%;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cards__documents-button:hover {
+  cursor: pointer;
+}
+
+.cards__documents-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cards__buttons-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+.cards__solve-demand-button {
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-4);
+  color: var(--color-1);
+  font-size: 1.6rem;
+  padding: 1rem 2.2rem;
+  border-radius: 1rem;
+}
+
+.cards__solve-demand-text {
+  margin: 0;
+}
+
+.cards__cancel-button {
+  border: solid 0.1rem var(--color-4);
+  background-color: var(--color-1);
+  color: var(--color-4);
+  font-size: 1.6rem;
+  padding: 1rem 2.2rem;
+  border-radius: 1rem;
+}
+
+.cards__solve-demand-button:hover,
+.cards__cancel-button:hover {
+  cursor: pointer;
 }
