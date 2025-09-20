@@ -1,0 +1,72 @@
+.nav {
+  background-color: var(--color-7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+
+
+.nav-left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (min-width: 1280px) {
+
+  .nav,
+  .nav-left,
+  .nav-right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav {
+    padding: 1rem 0rem;
+  }
+
+  .nav-left {
+    gap: 4rem;
+  }
+
+  .nav-right {
+    gap: 2rem;
+  }
+
+}
+
+@media (min-width: 1440px) {
+  
+}
+
+.icono-logo-desktop,
+.nav-desktop-icons,
+.icono-exit {
+  display: none;
+}
+
+@media (min-width: 1280px) {
+
+  .icono-logo-desktop,
+  .icono-exit {
+    display: block;
+  }
+
+  .icono-logo,
+  .icono-menu-hamburguesa {
+    display: none;
+  }
+
+  .nav-desktop-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .nav-desktop-icons * {
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+}

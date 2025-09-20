@@ -1,0 +1,33 @@
+.base {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1280px) {
+  .base {
+    flex-direction: row;
+    height: 100vh;
+    background-color: var(--color-7);
+  }
+
+}
+
+.base__content {
+  padding: 2rem;
+}
+
+.base__active-demands {
+  font-size: 2rem;
+}
+
+@media (min-width: 1280px) {
+  .base__content{
+    border-radius: 2rem;
+    background-color: var(--color-11);
+    width: 100%;
+  }
+  .base__active-demands {
+    font-size: 2.2rem;
+  }
+
+}
