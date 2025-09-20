@@ -1,0 +1,48 @@
+.cards {
+  /* border: solid 0.1rem black; */
+  box-shadow: 0px 3px 10px -1px rgba(175, 175, 175, 0.66);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+.cards__header {
+  font-weight: bold;
+  color: var(--color-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cards__header h2 {
+  font-size: 1.6rem;
+}
+
+.cards__status-type {
+  display: flex;
+  gap: 1rem;
+}
+
+.cards__demand-status,
+.cards__demand-type {
+  background-color: var(--color-3);
+  color: var(--color-2);
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+}
+
+.cards__client {
+  color: var(--color-8);
+}
+
+.cards__client-text,
+.cards__description {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.cards__client-name,
+.cards__description {
+  font-weight: normal;
+}
