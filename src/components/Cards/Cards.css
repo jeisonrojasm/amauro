@@ -74,6 +74,24 @@
   justify-content: space-between;
 }
 
+@media (min-width: 1280px) {
+  .cards-modal {
+    margin-top: 0;
+    margin-left: 50vw;
+  }
+
+  .cards-modal__right {
+    margin-bottom: 8rem;
+  }
+
+}
+
+@media (min-width:1440px) {
+  .cards-modal {
+    margin-left: 60vw;
+  }
+}
+
 .cards__documents-button {
   background-color: var(--color-12);
   border: none;

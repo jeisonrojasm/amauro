@@ -22,7 +22,8 @@ export const Cards = ({
     <>
       <div className='cards'>
         <div className='cards__header'>
-          <h2>{`Demanda #${id}`}</h2>
+          {/* <h2>{`Demanda #${id}`}</h2> */}
+          <h2>{name}</h2>
           <img src={icono_visibility} alt="Icono ver" onClick={() => onVisibilityClick(setShowModal)} />
         </div>
 
@@ -48,7 +49,8 @@ export const Cards = ({
           <div className='cards-modal'>
             <div>
               <div className='cards__header--modal'>
-                <h2>{`Demanda #${id}`}</h2>
+                {/* <h2>{`Demanda #${id}`}</h2> */}
+                <h2>{name}</h2>
                 <button onClick={() => setShowModal(false)}>
                   <img src={icono_close} alt="Cerrar" />
                 </button>
@@ -72,7 +74,7 @@ export const Cards = ({
               </div>
             </div>
 
-            <div>
+            <div className='cards-modal__right'>
               {
                 documents.map((document) => (
                   <button key={document.id} className='cards__documents-button'>

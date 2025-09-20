@@ -3,13 +3,21 @@ import icono_search from '../../assets/images/icono-search.png'
 import { Nav } from '../Nav/Nav'
 import './Base.css'
 import { Cards } from '../Cards/Cards'
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { DataContext } from '../../context/DataContext'
+import { onSearchChange } from './BaseFunctions'
 
 export const Base = () => {
   const { data } = useContext(DataContext)
   const { demands } = data
-  console.log(demands);
+
+  const [demandsFiltered, setDemandsFiltered] = useState(demands)
+  useEffect(() => {
+    if (demands) {
+      setDemandsFiltered(demands);
+    }
+  }, [demands]);
+
 
   return (
     <div className='base'>
@@ -19,7 +27,7 @@ export const Base = () => {
         <div className='base__filters'>
           <div className="filters__container filters__search-container">
             <img src={icono_search} alt="Icono de búsqueda" />
-            <input className='filters__search-input' type="text" placeholder="Buscar" />
+            <input className='filters__search-input' type="text" placeholder="Buscar" onChange={(e) => onSearchChange(e, demands, setDemandsFiltered)} />
           </div>
           <div className="filters__container filters__filter-container">
             <img src={icono_filter} alt="Icono de filtro" />
@@ -27,7 +35,7 @@ export const Base = () => {
           </div>
         </div>
         <div className='base__demands'>
-          {demands.map((demand) => (
+          {demandsFiltered.map((demand) => (
             <Cards
               key={demand.id}
               client={demand.client}
