@@ -12,10 +12,10 @@
   justify-content: flex-end;
 }
 
-@media (min-width:1280px) {
+@media (min-width:768px) {
   .demand-detail-modal {
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
   }
   
 }

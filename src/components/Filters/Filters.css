@@ -12,7 +12,7 @@
   gap: 3rem;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 768px) {
   .filters-modal {
     margin-top: 0;
     padding-bottom: 5rem;

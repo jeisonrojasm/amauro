@@ -75,7 +75,7 @@
   box-sizing: border-box
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 768px) {
   .cards-modal {
     margin-top: 0;
     margin-left: 58vw;
@@ -85,10 +85,10 @@
 
 }
 
-@media (min-width:1440px) {
+@media (min-width:1024px) {
   .cards-modal {
-    margin-left: 100vw;
-    width: 100%;
+    margin-left: 50vw;
+    width: 50vw;
   }
 }
 

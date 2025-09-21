@@ -25,7 +25,7 @@ export const Base = () => {
 
   const [showModal, setShowModal] = useState(false)
 
-  const isTablet = useMediaQuery('(min-width: 1280px)')
+  const isTablet = useMediaQuery('(min-width: 768px)')
 
   return (
     <>
