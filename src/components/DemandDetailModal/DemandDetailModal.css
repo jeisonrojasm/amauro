@@ -1,0 +1,21 @@
+.demand-detail-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(0 0 0 / 20%);
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+@media (min-width:768px) {
+  .demand-detail-modal {
+    justify-content: center;
+    align-items: flex-end;
+  }
+  
+}
