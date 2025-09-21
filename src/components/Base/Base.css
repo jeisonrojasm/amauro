@@ -146,3 +146,43 @@
   max-height: 60vh;
   overflow-y: auto;
 }
+
+.base__active-filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 3rem;
+}
+
+.base__active-filters-list {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  max-width: 80%;
+}
+
+.base__active-filters-item {
+  background-color: var(--color-5);
+  color: var(--color-1);
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+}
+
+.base__active-filters-item-close:hover,
+.base__clear-filters:hover {
+  cursor: pointer;
+}
+
+.base__clear-filters {
+  border: none;
+  background-color: var(--color-1);
+  color: var(--color-10);
+  font-size: 1.6rem;
+  min-width: 12rem;
+}

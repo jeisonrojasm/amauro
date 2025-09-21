@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
 import icono_filter from '../../assets/images/icono-filter-list.png'
 import icono_search from '../../assets/images/icono-search.png'
+import icono_close_small from '../../assets/images/icono-close-small.png'
 import { DataContext } from '../../context/DataContext'
 import { useMediaQuery } from '../../hooks/useMediaQuery'
 import { Cards } from '../Cards/Cards'
@@ -11,7 +12,7 @@ import './Base.css'
 import { onFilterClick, onSearchChange } from './BaseFunctions'
 
 export const Base = () => {
-  const { data } = useContext(DataContext)
+  const { data, setData } = useContext(DataContext)
 
   const { demands, demandTypes, statuses, clients } = data
 
@@ -65,6 +66,52 @@ export const Base = () => {
               </DemandDetailModal>
             )}
           </div>
+
+          {
+            data.selectedClients.length > 0 || data.selectedStatuses.length > 0 || data.selectedDemandTypes.length > 0 ? (
+              <div className='base__active-filters'>
+                <div className='base__active-filters-list'>
+                  {data.selectedClients.map(client => (
+                    <span
+                      key={client.id}
+                      className='base__active-filters-item'
+                    >
+                      {client.name}
+                      <img className='base__active-filters-item-close' src={icono_close_small} alt="Icono de cerrar" />
+                    </span>
+                  ))}
+                  {data.selectedStatuses.map(status => (
+                    <span
+                      key={status.id}
+                      className='base__active-filters-item'
+                    >
+                      {status.name}
+                      <img className='base__active-filters-item-close' src={icono_close_small} alt="Icono de cerrar" />
+                    </span>
+                  ))}
+                  {data.selectedDemandTypes.map(type => (
+                    <span
+                      key={type.id}
+                      className='base__active-filters-item'
+                    >
+                      {type.name}
+                      <img className='base__active-filters-item-close' src={icono_close_small} alt="Icono de cerrar" />
+                    </span>
+                  ))}
+                </div>
+
+                <div>
+                  <button className='base__clear-filters'
+                    onClick={() => {
+                      setDemandsFiltered(demands)
+                      setData({ ...data, selectedClients: [], selectedStatuses: [], selectedDemandTypes: [] })
+                    }}>
+                    Limpiar filtros
+                  </button>
+                </div>
+              </div>
+            ) : null
+          }
 
           <div className='base__demands'>
             {demandsFiltered.map((demand) => (

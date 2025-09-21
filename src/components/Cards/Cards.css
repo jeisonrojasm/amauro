@@ -65,7 +65,7 @@
 
 .cards-modal {
   background-color: var(--color-1);
-  /* margin-top: 8rem; */
+  overflow: auto;
   height: 88%;
   border-radius: 1rem;
   padding: 4rem 2rem 3rem 2rem;
@@ -87,7 +87,8 @@
 
 @media (min-width:1440px) {
   .cards-modal {
-    margin-left: 60vw;
+    margin-left: 100vw;
+    width: 100%;
   }
 }
 
