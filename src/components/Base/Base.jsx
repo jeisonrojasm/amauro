@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
+import icono_close_small from '../../assets/images/icono-close-small.png'
 import icono_filter from '../../assets/images/icono-filter-list.png'
 import icono_search from '../../assets/images/icono-search.png'
-import icono_close_small from '../../assets/images/icono-close-small.png'
 import { DataContext } from '../../context/DataContext'
 import { useMediaQuery } from '../../hooks/useMediaQuery'
 import { Cards } from '../Cards/Cards'
@@ -19,7 +19,7 @@ export const Base = () => {
   const [demandsFiltered, setDemandsFiltered] = useState(demands)
   useEffect(() => {
     if (demands) {
-      setDemandsFiltered(demands);
+      setDemandsFiltered(demands)
     }
   }, [demands])
 

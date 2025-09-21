@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
-import './Filters.css'
-import { Dropdown } from '../Dropdown/Dropdown'
-import { onSelectClient, onSelectStatus, onSelectDemandType, onApplyFiltersClick } from './FiltersFunctions'
+import { useContext } from 'react'
 import { DataContext } from '../../context/DataContext'
+import { Dropdown } from '../Dropdown/Dropdown'
+import './Filters.css'
+import { onApplyFiltersClick, onSelectClient, onSelectDemandType, onSelectStatus } from './FiltersFunctions'
 
 export const Filters = ({
   clients,

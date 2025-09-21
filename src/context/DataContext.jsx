@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from 'react'
 import { getAllDemandsQuery, getClientsQuery, getDemandTypesQuery, getStatusesQuery } from '../utils/queries'
 
-export const DataContext = createContext();
+export const DataContext = createContext()
 
 export const DataProvider = ({ children }) => {
   const [data, setData] = useState({
@@ -30,5 +30,5 @@ export const DataProvider = ({ children }) => {
     <DataContext.Provider value={{ data, setData }}>
       {children}
     </DataContext.Provider>
-  );
-};
+  )
+}

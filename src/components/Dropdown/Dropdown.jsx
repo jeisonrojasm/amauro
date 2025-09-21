@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react"
-import "./Dropdown.css"
 import icono_arrow from '../../assets/images/icono-arrow.png'
 import { DataContext } from "../../context/DataContext"
+import "./Dropdown.css"
 
 export const Dropdown = ({ options, onSelect, label, info }) => {
   const [open, setOpen] = useState(false)

@@ -1,17 +1,16 @@
-import React from 'react'
+import icono_exit from '../../assets/images/icono-exit.png'
+import icono_nav_1 from '../../assets/images/icono-nav-1.png'
+import icono_nav_2 from '../../assets/images/icono-nav-2.png'
+import icono_nav_3 from '../../assets/images/icono-nav-3.png'
+import icono_nav_4 from '../../assets/images/icono-nav-4.png'
+import icono_nav_5 from '../../assets/images/icono-nav-5.png'
+import icono_nav_6 from '../../assets/images/icono-nav-6.png'
+import icono_nav_7 from '../../assets/images/icono-nav-7.png'
+import logo_desktop from '../../assets/images/logo-desktop.png'
+import logo from '../../assets/images/logo.png'
+import menu_hamburguesa from '../../assets/images/menu-hamburguesa.png'
+import user_card from '../../assets/images/user-card.png'
 import './Nav.css'
-import menu_hamburguesa from '../../assets/images/menu-hamburguesa.png';
-import logo from '../../assets/images/logo.png';
-import logo_desktop from '../../assets/images/logo-desktop.png';
-import user_card from '../../assets/images/user-card.png';
-import icono_nav_1 from '../../assets/images/icono-nav-1.png';
-import icono_nav_2 from '../../assets/images/icono-nav-2.png';
-import icono_nav_3 from '../../assets/images/icono-nav-3.png';
-import icono_nav_4 from '../../assets/images/icono-nav-4.png';
-import icono_nav_5 from '../../assets/images/icono-nav-5.png';
-import icono_nav_6 from '../../assets/images/icono-nav-6.png';
-import icono_nav_7 from '../../assets/images/icono-nav-7.png';
-import icono_exit from '../../assets/images/icono-exit.png';
 
 export const Nav = () => {
   return (

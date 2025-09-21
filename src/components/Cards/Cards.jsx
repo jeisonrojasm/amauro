@@ -1,12 +1,12 @@
-import './Cards.css'
-import icono_visibility from '../../assets/images/icono-visibility.png'
-import { onVisibilityClick } from './CardsFunctions'
-import { useState } from 'react';
-import { DemandDetailModal } from '../DemandDetailModal/DemandDetailModal';
-import icono_close from '../../assets/images/icono-close.png'
-import icono_file from '../../assets/images/icono-file.png'
-import icono_download from '../../assets/images/icono-download.png'
+import { useState } from 'react'
 import icono_add from '../../assets/images/icono-add.png'
+import icono_close from '../../assets/images/icono-close.png'
+import icono_download from '../../assets/images/icono-download.png'
+import icono_file from '../../assets/images/icono-file.png'
+import icono_visibility from '../../assets/images/icono-visibility.png'
+import { DemandDetailModal } from '../DemandDetailModal/DemandDetailModal'
+import './Cards.css'
+import { onVisibilityClick } from './CardsFunctions'
 
 export const Cards = ({
   client,
