@@ -11,7 +11,7 @@ export const Filters = ({
   setShowModal,
   setDemandsFiltered
 }) => {
-  const { data } = useContext(DataContext)
+  const { data, setData } = useContext(DataContext)
 
   return (
     <div className='filters-modal'>
@@ -27,7 +27,7 @@ export const Filters = ({
         </div>
       </div>
       <button className='filters-modal__apply-button'
-        onClick={(e) => onApplyFiltersClick(e, data, setShowModal, setDemandsFiltered)}>
+        onClick={(e) => onApplyFiltersClick(e, data, setData, setShowModal, setDemandsFiltered)}>
         Aplicar filtros
       </button>
     </div>

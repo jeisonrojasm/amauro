@@ -68,7 +68,7 @@ export const Base = () => {
           </div>
 
           {
-            data.selectedClients.length > 0 || data.selectedStatuses.length > 0 || data.selectedDemandTypes.length > 0 ? (
+            data.appliedFilters && (data.selectedClients.length > 0 || data.selectedStatuses.length > 0 || data.selectedDemandTypes.length > 0) ? (
               <div className='base__active-filters'>
                 <div className='base__active-filters-list'>
                   {data.selectedClients.map(client => (
@@ -104,7 +104,7 @@ export const Base = () => {
                   <button className='base__clear-filters'
                     onClick={() => {
                       setDemandsFiltered(demands)
-                      setData({ ...data, selectedClients: [], selectedStatuses: [], selectedDemandTypes: [] })
+                      setData({ ...data, selectedClients: [], selectedStatuses: [], selectedDemandTypes: [], appliedFilters: false })
                     }}>
                     Limpiar filtros
                   </button>

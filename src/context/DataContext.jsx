@@ -11,7 +11,8 @@ export const DataProvider = ({ children }) => {
     clients: [],
     selectedClients: [],
     selectedStatuses: [],
-    selectedDemandTypes: []
+    selectedDemandTypes: [],
+    appliedFilters: false
   })
 
   useEffect(() => {

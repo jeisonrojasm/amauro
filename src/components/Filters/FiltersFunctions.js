@@ -21,7 +21,7 @@ export const onSelectDemandType = (option, data, setData) => {
   })
 }
 
-export const onApplyFiltersClick = async (e, data, setShowModal, setDemandsFiltered) => {
+export const onApplyFiltersClick = async (e, data, setData, setShowModal, setDemandsFiltered) => {
   e.stopPropagation()
   const { selectedClients, selectedStatuses, selectedDemandTypes } = data
   let filteredDemands = data.demands
@@ -56,6 +56,7 @@ export const onApplyFiltersClick = async (e, data, setShowModal, setDemandsFilte
     )
   }
 
+  setData({ ...data, appliedFilters: true })
   setDemandsFiltered(filteredDemands)
   setShowModal(false)
 }
