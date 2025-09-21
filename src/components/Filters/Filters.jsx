@@ -1,10 +1,16 @@
 import React, { useContext } from 'react'
 import './Filters.css'
 import { Dropdown } from '../Dropdown/Dropdown'
-import { onSelectClient, onSelectStatus, onSelectDemandType } from './FiltersFunctions'
+import { onSelectClient, onSelectStatus, onSelectDemandType, onApplyFiltersClick } from './FiltersFunctions'
 import { DataContext } from '../../context/DataContext'
 
-export const Filters = ({ clients, statuses, demandTypes, setShowModal }) => {
+export const Filters = ({
+  clients,
+  statuses,
+  demandTypes,
+  setShowModal,
+  setDemandsFiltered
+}) => {
   const { data } = useContext(DataContext)
 
   return (
@@ -21,10 +27,7 @@ export const Filters = ({ clients, statuses, demandTypes, setShowModal }) => {
         </div>
       </div>
       <button className='filters-modal__apply-button'
-        onClick={(e) => {
-          e.stopPropagation()
-          setShowModal(false)
-        }}>
+        onClick={(e) => onApplyFiltersClick(e, data, setShowModal, setDemandsFiltered)}>
         Aplicar filtros
       </button>
     </div>

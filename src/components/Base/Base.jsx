@@ -43,13 +43,25 @@ export const Base = () => {
               <p className='filters__filter-text'>Filtrar por</p>
               {showModal && isTablet && (
                 <div className='filters__modal-desktop'>
-                  <Filters clients={clients} statuses={statuses} demandTypes={demandTypes} setShowModal={setShowModal} />
+                  <Filters
+                    clients={clients}
+                    statuses={statuses}
+                    demandTypes={demandTypes}
+                    setShowModal={setShowModal}
+                    setDemandsFiltered={setDemandsFiltered}
+                  />
                 </div>
               )}
             </div>
             {showModal && !isTablet && (
               <DemandDetailModal>
-                <Filters clients={clients} statuses={statuses} demandTypes={demandTypes} setShowModal={setShowModal} />
+                <Filters
+                  clients={clients}
+                  statuses={statuses}
+                  demandTypes={demandTypes}
+                  setShowModal={setShowModal}
+                  setDemandsFiltered={setDemandsFiltered}
+                />
               </DemandDetailModal>
             )}
           </div>
