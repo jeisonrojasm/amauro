@@ -9,6 +9,9 @@ export const DataProvider = ({ children }) => {
     demandTypes: [],
     statuses: [],
     clients: [],
+    selectedClients: [],
+    selectedStatuses: [],
+    selectedDemandTypes: []
   })
 
   useEffect(() => {

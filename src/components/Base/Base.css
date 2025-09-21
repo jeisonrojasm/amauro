@@ -133,3 +133,15 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+.filters__modal-desktop {
+  position: absolute;
+  margin-top: 4.5rem;
+  height: auto;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  max-height: 60vh;
+  overflow-y: auto;
+}

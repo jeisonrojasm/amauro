@@ -9,9 +9,12 @@ import { onFilterClick, onSearchChange } from './BaseFunctions'
 import { DemandDetailModal } from '../DemandDetailModal/DemandDetailModal'
 import { Dropdown } from '../Dropdown/Dropdown'
 import { Filters } from '../Filters/Filters'
+import { useMediaQuery } from '../../hooks/useMediaQuery'
 
 export const Base = () => {
   const { data } = useContext(DataContext)
+  console.log(data)
+
   const { demands, demandTypes, statuses, clients } = data
 
   const [demandsFiltered, setDemandsFiltered] = useState(demands)
@@ -23,9 +26,7 @@ export const Base = () => {
 
   const [showModal, setShowModal] = useState(false)
 
-  const handleSelect = (opcion) => {
-    console.log("Seleccionaste:", opcion);
-  };
+  const isTablet = useMediaQuery('(min-width: 1280px)')
 
   return (
     <>
@@ -42,10 +43,15 @@ export const Base = () => {
             <div className="filters__container filters__filter-container" onClick={() => onFilterClick(setShowModal)}>
               <img src={icono_filter} alt="Icono de filtro" />
               <p className='filters__filter-text'>Filtrar por</p>
+              {showModal && isTablet && (
+                <div className='filters__modal-desktop'>
+                  <Filters clients={clients} statuses={statuses} demandTypes={demandTypes} setShowModal={setShowModal} />
+                </div>
+              )}
             </div>
-            {showModal && (
+            {showModal && !isTablet && (
               <DemandDetailModal>
-                <Filters clients={clients} statuses={statuses} demandTypes={demandTypes} handleSelect={handleSelect} setShowModal={setShowModal} />
+                <Filters clients={clients} statuses={statuses} demandTypes={demandTypes} setShowModal={setShowModal} />
               </DemandDetailModal>
             )}
           </div>

@@ -1,8 +1,9 @@
 import React from 'react'
 import './Filters.css'
 import { Dropdown } from '../Dropdown/Dropdown'
+import { onSelectClient, onSelectStatus, onSelectDemandType } from './FiltersFunctions'
 
-export const Filters = ({ clients, statuses, demandTypes, handleSelect, setShowModal }) => {
+export const Filters = ({ clients, statuses, demandTypes, setShowModal }) => {
   return (
     <div className='filters-modal'>
       <div className='filters-modal__content'>
@@ -11,12 +12,16 @@ export const Filters = ({ clients, statuses, demandTypes, handleSelect, setShowM
         </h2>
 
         <div>
-          <Dropdown label='Cliente' options={clients} onSelect={handleSelect} />
-          <Dropdown label='Estado' options={statuses} onSelect={handleSelect} />
-          <Dropdown label='Tipo' options={demandTypes} onSelect={handleSelect} />
+          <Dropdown label='Cliente' options={clients} onSelect={onSelectClient} />
+          <Dropdown label='Estado' options={statuses} onSelect={onSelectStatus} />
+          <Dropdown label='Tipo' options={demandTypes} onSelect={onSelectDemandType} />
         </div>
       </div>
-      <button className='filters-modal__apply-button' onClick={() => setShowModal(false)}>
+      <button className='filters-modal__apply-button'
+        onClick={(e) => {
+          e.stopPropagation()
+          setShowModal(false)
+        }}>
         Aplicar filtros
       </button>
     </div>
