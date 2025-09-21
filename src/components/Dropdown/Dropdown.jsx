@@ -11,7 +11,8 @@ export const Dropdown = ({ options, onSelect, label, info }) => {
 
   const handleSelect = (e, option) => {
     if (e.target.checked) {
-      setSelected([...selected, option])
+      setSelected([option])
+      setOpen(false)
     } else {
       setSelected(selected.filter((item) => item !== option))
     }
