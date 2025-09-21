@@ -1,5 +1,4 @@
 .cards {
-  /* border: solid 0.1rem black; */
   box-shadow: 0px 3px 10px -1px rgba(175, 175, 175, 0.66);
   border-radius: 1rem;
   padding: 2rem;
@@ -65,30 +64,30 @@
 
 .cards-modal {
   background-color: var(--color-1);
-  margin-top: 8rem;
-  height: 100%;
+  overflow: auto;
+  height: 88%;
   border-radius: 1rem;
   padding: 4rem 2rem 3rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-sizing: border-box
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 768px) {
   .cards-modal {
     margin-top: 0;
-    margin-left: 50vw;
-  }
-
-  .cards-modal__right {
-    margin-bottom: 8rem;
+    margin-left: 58vw;
+    padding-bottom: 5rem;
+    height: 100%;
   }
 
 }
 
-@media (min-width:1440px) {
+@media (min-width:1024px) {
   .cards-modal {
-    margin-left: 60vw;
+    margin-left: 50vw;
+    width: 50vw;
   }
 }
 

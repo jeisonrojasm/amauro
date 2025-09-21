@@ -21,3 +21,7 @@ export const onSearchChange = (event, demands, setDemandsFiltered) => {
   const filtered = filterDemands(demands, searchText)
   setDemandsFiltered(filtered)
 }
+
+export const onFilterClick = (setShowModal) => {
+  setShowModal(true)
+}
