@@ -24,14 +24,16 @@ export const onSelectDemandType = (option, data, setData) => {
 export const onApplyFiltersClick = async (e, data, setShowModal, setDemandsFiltered) => {
   e.stopPropagation()
   const { selectedClients, selectedStatuses, selectedDemandTypes } = data
-  let filteredDemands = []
+  let filteredDemands = data.demands
 
   if (selectedStatuses.length > 0) {
     const statusParams = selectedStatuses.map(status => status.name)
 
     for (const status of statusParams) {
       const statusFilteredDemands = await getFilterByDemandStatusQuery(status)
-      filteredDemands = [...filteredDemands, ...statusFilteredDemands]
+      filteredDemands = filteredDemands.filter(demand =>
+        statusFilteredDemands.some(filtered => filtered.status === demand.status)
+      )
     }
   }
 
@@ -40,23 +42,18 @@ export const onApplyFiltersClick = async (e, data, setShowModal, setDemandsFilte
 
     for (const type of typeParams) {
       const typeFilteredDemands = await getFilterByDemandTypeQuery(type)
-      filteredDemands = [...filteredDemands, ...typeFilteredDemands]
+      filteredDemands = filteredDemands.filter(demand =>
+        typeFilteredDemands.some(filtered => filtered.demandType === demand.demandType)
+      )
     }
   }
 
   if (selectedClients.length > 0) {
     const clientParams = selectedClients.map(client => client.name)
     const clientFilteredDemands = data.demands.filter(demand => clientParams.includes(demand.client))
-    filteredDemands = [...filteredDemands, ...clientFilteredDemands]
-  }
-
-  // Remove duplicates by demand.id
-  filteredDemands = Array.from(new Set(filteredDemands.map(d => d.id))).map(id => {
-    return filteredDemands.find(d => d.id === id)
-  })
-
-  if (filteredDemands.length === 0) {
-    filteredDemands = data.demands
+    filteredDemands = filteredDemands.filter(demand =>
+      clientFilteredDemands.some(filtered => filtered.client === demand.client)
+    )
   }
 
   setDemandsFiltered(filteredDemands)
