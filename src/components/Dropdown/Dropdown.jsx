@@ -3,7 +3,7 @@ import "./Dropdown.css"
 import icono_arrow from '../../assets/images/icono-arrow.png'
 import { DataContext } from "../../context/DataContext"
 
-export const Dropdown = ({ options, onSelect, label }) => {
+export const Dropdown = ({ options, onSelect, label, info }) => {
   const [open, setOpen] = useState(false)
   const [selected, setSelected] = useState([])
 
@@ -34,7 +34,14 @@ export const Dropdown = ({ options, onSelect, label }) => {
         <ul className="dropdown-menu">
           {options.map((opt) => (
             <li key={opt.id} >
-              <input type="checkbox" className="dropdown-checkbox" name={opt.name} id={opt.id} onChange={(e) => handleSelect(e, opt)} />
+              <input
+                type="checkbox"
+                className="dropdown-checkbox"
+                name={opt.name}
+                id={opt.id}
+                onChange={(e) => handleSelect(e, opt)}
+                checked={info.includes(opt)}
+              />
               <p className="dropdown-option">{opt.name}</p>
             </li>
           ))}

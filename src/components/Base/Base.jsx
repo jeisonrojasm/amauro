@@ -1,19 +1,17 @@
+import { useContext, useEffect, useState } from 'react'
 import icono_filter from '../../assets/images/icono-filter-list.png'
 import icono_search from '../../assets/images/icono-search.png'
+import { DataContext } from '../../context/DataContext'
+import { useMediaQuery } from '../../hooks/useMediaQuery'
+import { Cards } from '../Cards/Cards'
+import { DemandDetailModal } from '../DemandDetailModal/DemandDetailModal'
+import { Filters } from '../Filters/Filters'
 import { Nav } from '../Nav/Nav'
 import './Base.css'
-import { Cards } from '../Cards/Cards'
-import { useContext, useEffect, useState } from 'react'
-import { DataContext } from '../../context/DataContext'
 import { onFilterClick, onSearchChange } from './BaseFunctions'
-import { DemandDetailModal } from '../DemandDetailModal/DemandDetailModal'
-import { Dropdown } from '../Dropdown/Dropdown'
-import { Filters } from '../Filters/Filters'
-import { useMediaQuery } from '../../hooks/useMediaQuery'
 
 export const Base = () => {
   const { data } = useContext(DataContext)
-  console.log(data)
 
   const { demands, demandTypes, statuses, clients } = data
 
