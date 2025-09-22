@@ -4,7 +4,7 @@ import icono_close from '../../assets/images/icono-close.png'
 import icono_download from '../../assets/images/icono-download.png'
 import icono_file from '../../assets/images/icono-file.png'
 import icono_visibility from '../../assets/images/icono-visibility.png'
-import { DemandDetailModal } from '../DemandDetailModal/DemandDetailModal'
+import { Modal } from '../Modal/Modal'
 import './Cards.css'
 import { onVisibilityClick } from './CardsFunctions'
 
@@ -44,7 +44,7 @@ export const Cards = ({
         </div>
       </div>
       {showModal && (
-        <DemandDetailModal>
+        <Modal>
           <div className='cards-modal'>
             <div>
               <div className='cards__header--modal'>
@@ -97,7 +97,7 @@ export const Cards = ({
               </div>
             </div>
           </div>
-        </DemandDetailModal>
+        </Modal>
       )}
     </>
   )
