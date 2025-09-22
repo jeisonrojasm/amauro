@@ -191,3 +191,9 @@
   font-size: 1.6rem;
   min-width: 12rem;
 }
+
+.base__no-demands-message {
+  font-size: 1.6rem;
+  color: var(--color-2);
+  font-weight: bold;
+}
