@@ -1,9 +1,9 @@
 import ReactDOM from 'react-dom'
-import './DemandDetailModal.css'
+import './Modal.css'
 
 const portalRoot = document.getElementById('portal-root')
 
-export const DemandDetailModal = ({ children }) => {
+export const Modal = ({ children }) => {
   return ReactDOM.createPortal(
     <div className="demand-detail-modal">
       {children}

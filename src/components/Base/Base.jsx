@@ -5,7 +5,7 @@ import icono_search from '../../assets/images/icono-search.png'
 import { DataContext } from '../../context/DataContext'
 import { useMediaQuery } from '../../hooks/useMediaQuery'
 import { Cards } from '../Cards/Cards'
-import { DemandDetailModal } from '../DemandDetailModal/DemandDetailModal'
+import { Modal } from '../Modal/Modal'
 import { Filters } from '../Filters/Filters'
 import { Nav } from '../Nav/Nav'
 import './Base.css'
@@ -55,7 +55,7 @@ export const Base = () => {
               )}
             </div>
             {showModal && !isTablet && (
-              <DemandDetailModal>
+              <Modal>
                 <Filters
                   clients={clients}
                   statuses={statuses}
@@ -63,7 +63,7 @@ export const Base = () => {
                   setShowModal={setShowModal}
                   setDemandsFiltered={setDemandsFiltered}
                 />
-              </DemandDetailModal>
+              </Modal>
             )}
           </div>
 

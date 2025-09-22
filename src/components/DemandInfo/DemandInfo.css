@@ -1,0 +1,29 @@
+.cards__status-type {
+  display: flex;
+  gap: 1rem;
+}
+
+.cards__demand-status,
+.cards__demand-type {
+  background-color: var(--color-3);
+  color: var(--color-2);
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+}
+
+.cards__client {
+  color: var(--color-8);
+}
+
+.cards__client-text,
+.cards__description {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.cards__client-name,
+.cards__description {
+  font-weight: normal;
+}
