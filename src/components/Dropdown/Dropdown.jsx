@@ -27,7 +27,11 @@ export const Dropdown = ({ options, onSelect, label, info }) => {
     <div className='dropdown'>
       <div className='dropdown-toggle' onClick={toggleDropdown}>
         <p>{label}</p>
-        <img src={icono_arrow} alt='Arrow' />
+        <img
+          src={icono_arrow}
+          alt='Arrow'
+          className={`dropdown-arrow ${open ? 'open' : ''}`}
+        />
       </div>
 
       {open && (

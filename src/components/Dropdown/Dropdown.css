@@ -33,3 +33,12 @@
 .dropdown-option {
   text-transform: capitalize;
 }
+
+.dropdown-arrow {
+  transition: transform 0.3s ease;
+  transform: rotate(0deg);
+}
+
+.dropdown-arrow.open {
+  transform: rotate(90deg);
+}

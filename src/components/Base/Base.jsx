@@ -114,18 +114,26 @@ export const Base = () => {
           }
 
           <div className='base__demands'>
-            {demandsFiltered.map((demand) => (
-              <Cards
-                key={demand.id}
-                client={demand.client}
-                demandType={demand.demandType}
-                description={demand.description}
-                documents={demand.documents}
-                id={demand.id}
-                name={demand.name}
-                status={demand.status}
-              />
-            ))}
+            {
+              demandsFiltered.length === 0 ? (
+                <p className="base__no-demands-message">
+                  No se encontraron demandas para los filtros aplicados.
+                </p>
+              ) : (
+                demandsFiltered.map((demand) => (
+                  <Cards
+                    key={demand.id}
+                    client={demand.client}
+                    demandType={demand.demandType}
+                    description={demand.description}
+                    documents={demand.documents}
+                    id={demand.id}
+                    name={demand.name}
+                    status={demand.status}
+                  />
+                ))
+              )
+            }
           </div>
         </div>
       </div>
