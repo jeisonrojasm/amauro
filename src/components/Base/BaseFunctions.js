@@ -1,5 +1,5 @@
 export const filterDemands = (demands, searchText) => {
-  const text = searchText.toLowerCase();
+  const text = searchText.toLowerCase()
 
   return demands.filter((demand) => {
     return (
@@ -7,8 +7,8 @@ export const filterDemands = (demands, searchText) => {
       demand.client.toLowerCase().includes(text) ||
       demand.description.toLowerCase().includes(text) ||
       demand.demandType.toLowerCase().includes(text)
-    );
-  });
+    )
+  })
 }
 
 export const onSearchChange = (event, demands, setDemandsFiltered) => {

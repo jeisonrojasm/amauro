@@ -1,7 +1,12 @@
 import { createContext, useEffect, useState } from 'react'
-import { getAllDemandsQuery, getClientsQuery, getDemandTypesQuery, getStatusesQuery } from '../utils/queries'
+import {
+  getAllDemandsQuery,
+  getClientsQuery,
+  getDemandTypesQuery,
+  getStatusesQuery,
+} from '../utils/queries'
 
-export const DataContext = createContext();
+export const DataContext = createContext(null)
 
 export const DataProvider = ({ children }) => {
   const [data, setData] = useState({
@@ -12,17 +17,33 @@ export const DataProvider = ({ children }) => {
     selectedClients: [],
     selectedStatuses: [],
     selectedDemandTypes: [],
-    appliedFilters: false
+    appliedFilters: false,
   })
 
   useEffect(() => {
     const fetchData = async () => {
-      const demands = await getAllDemandsQuery()
-      const demandTypes = await getDemandTypesQuery()
-      const statuses = await getStatusesQuery()
-      const clients = await getClientsQuery()
-      setData({ ...data, demands, demandTypes, statuses, clients })
+      const cachedData = sessionStorage.getItem('appData')
+
+      if (cachedData) {
+        setData(prev => ({ ...prev, ...JSON.parse(cachedData) }))
+        return
+      }
+
+      // Si no hay caché, llama a los endpoints
+      const [demands, demandTypes, statuses, clients] = await Promise.all([
+        getAllDemandsQuery(),
+        getDemandTypesQuery(),
+        getStatusesQuery(),
+        getClientsQuery(),
+      ])
+
+      const newData = { demands, demandTypes, statuses, clients }
+
+      sessionStorage.setItem('appData', JSON.stringify(newData))
+
+      setData(prev => ({ ...prev, ...newData }))
     }
+
     fetchData()
   }, [])
 
@@ -30,5 +51,5 @@ export const DataProvider = ({ children }) => {
     <DataContext.Provider value={{ data, setData }}>
       {children}
     </DataContext.Provider>
-  );
-};
+  )
+}

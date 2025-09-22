@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from 'react'
+import icono_close_small from '../../assets/images/icono-close-small.png'
 import icono_filter from '../../assets/images/icono-filter-list.png'
 import icono_search from '../../assets/images/icono-search.png'
-import icono_close_small from '../../assets/images/icono-close-small.png'
 import { DataContext } from '../../context/DataContext'
 import { useMediaQuery } from '../../hooks/useMediaQuery'
 import { Cards } from '../Cards/Cards'
-import { DemandDetailModal } from '../DemandDetailModal/DemandDetailModal'
+import { Modal } from '../Modal/Modal'
 import { Filters } from '../Filters/Filters'
 import { Nav } from '../Nav/Nav'
 import './Base.css'
@@ -19,7 +19,7 @@ export const Base = () => {
   const [demandsFiltered, setDemandsFiltered] = useState(demands)
   useEffect(() => {
     if (demands) {
-      setDemandsFiltered(demands);
+      setDemandsFiltered(demands)
     }
   }, [demands])
 
@@ -55,7 +55,7 @@ export const Base = () => {
               )}
             </div>
             {showModal && !isTablet && (
-              <DemandDetailModal>
+              <Modal>
                 <Filters
                   clients={clients}
                   statuses={statuses}
@@ -63,7 +63,7 @@ export const Base = () => {
                   setShowModal={setShowModal}
                   setDemandsFiltered={setDemandsFiltered}
                 />
-              </DemandDetailModal>
+              </Modal>
             )}
           </div>
 
@@ -114,18 +114,26 @@ export const Base = () => {
           }
 
           <div className='base__demands'>
-            {demandsFiltered.map((demand) => (
-              <Cards
-                key={demand.id}
-                client={demand.client}
-                demandType={demand.demandType}
-                description={demand.description}
-                documents={demand.documents}
-                id={demand.id}
-                name={demand.name}
-                status={demand.status}
-              />
-            ))}
+            {
+              demandsFiltered.length === 0 ? (
+                <p className="base__no-demands-message">
+                  No se encontraron demandas para los filtros aplicados.
+                </p>
+              ) : (
+                demandsFiltered.map((demand) => (
+                  <Cards
+                    key={demand.id}
+                    client={demand.client}
+                    demandType={demand.demandType}
+                    description={demand.description}
+                    documents={demand.documents}
+                    id={demand.id}
+                    name={demand.name}
+                    status={demand.status}
+                  />
+                ))
+              )
+            }
           </div>
         </div>
       </div>
